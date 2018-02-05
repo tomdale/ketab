@@ -1,0 +1,20 @@
+<div class="sidebar">
+  <ul class="sidebar-packages">
+    {{#each @packages key="name" as |package|}}
+      <li
+        class="sidebar-package {{if (eq @selectedItem package) 'selected'}}"
+        onclick={{action selectItem package}}>
+        <Badge @item={{package}} />{{package.name}}
+      </li>
+      <ul class="sidebar-package-exports">
+        {{#each package.exports key="@index" as |export|}}
+          <li
+          class="sidebar-package-export {{if (eq @selectedItem export) 'selected'}}"
+          onclick={{action selectItem export}}>
+            <Badge @item={{export}} />{{export.name}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </ul>
+</div>

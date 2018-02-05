@@ -1,0 +1,83 @@
+<div class="class">
+  <div class="on-this-page">
+    <h4>On This Page</h4>
+    <ul>
+    {{#if @class.konstructor}}
+      <li><a href="{{@klass.name}}-constructor">Constructor</a></li>
+    {{/if}}
+    {{#if @class.properties}}
+      <li><a href="{{@klass.name}}-properties">Properties</a></li>
+    {{/if}}
+    {{#if @class.methods}}
+      <li><a href="{{@klass.name}}-methods">Methods</a></li>
+    {{/if}}
+    </ul>
+  </div>
+  <span class="kind">Class</span>
+  <h3 class="class-name">{{@class.name}}</h3>
+  {{#if @class.extends}}
+    <div class="extends">extends {{@class.extends}}</div>
+  {{/if}}
+  {{#if @class.implements}}
+    <div class="implements">implements <a href="#">{{@class.implements}}</a></div>
+  {{/if}}
+  {{#if @class.summary}}
+    <div class="summary">
+      <Summary @text={{@class.summary}} />
+    </div>
+  {{/if}}
+  {{#if @class.remarks}}
+    <div class="remarks">
+      <Summary @text={{@class.remarks}} />
+    </div>
+  {{/if}}
+
+  {{#if @class.konstructor}}
+    <div class="member-section">
+      <h4>Constructor</h4>
+      <div class="constructor code">
+        {{@class.konstructor.signature}}
+        {{!-- new {{@class.name}}(<EachItem @in={{@class.konstructor.parameters}} as |param value idx|>
+        {{~if idx ", "}}{{value.name}}{{if value.isOptional "?"}}{{#if value.isSpread}}...{{/if}}: {{value.type~}}
+        </EachItem>) --}}
+      </div>
+      {{#if @class.konstructor.summary}}
+        <div class="member-summary">
+          <Summary @text={{@class.konstructor.summary}} />
+        </div>
+      {{/if}}
+    </div>
+  {{/if}}
+
+  {{#if @class.properties}}
+    <div class="member-section">
+      <h4>Properties</h4>
+      <EachItem @in={{@class.properties}} as |propName property|>
+        <div class="property code">
+          {{property.signature}}
+        </div>
+      </EachItem>
+    </div>
+  {{/if}}
+
+  {{#if @class.methods}}
+    <div class="member-section">
+      <h4>Methods</h4>
+      <EachItem @in={{@class.methods}} as |name method|>
+        <div class="method code">
+          {{method.signature}}
+        </div>
+        {{#if method.summary.length}}
+          <div class="member-summary">
+            <Summary @text={{method.summary}} />
+          </div>
+        {{/if}}
+        {{#if method.remarks.length}}
+          <div class="member-remarks">
+            <Summary @text={{method.remarks}} />
+          </div>
+        {{/if}}
+      </EachItem>
+    </div>
+  {{/if}}
+</div>

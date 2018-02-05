@@ -1,0 +1,9 @@
+{{#if (eq @item.kind "package")}}
+  <span class="badge badge-package">P</span>
+{{else if (eq @item.kind "class")}}
+  <span class="badge badge-class">C</span>
+{{else if (eq @item.kind "interface")}}
+  <span class="badge badge-interface">I</span>
+{{else if (eq @item.kind "function")}}
+  <span class="badge badge-function">F</span>
+{{/if}}

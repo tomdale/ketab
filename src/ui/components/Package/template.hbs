@@ -1,0 +1,7 @@
+<div class="package">
+  <h1>{{@package.name}}</h1>
+  {{#each @package.classes key="@index" as |class|}}
+    <Class @class={{class}} />
+    <hr>
+  {{/each}}
+</div>

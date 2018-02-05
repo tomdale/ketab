@@ -1,0 +1,6 @@
+{{#each @text key="@index" as |segment|~}}
+  {{#if (eq segment.kind 'text')}}{{segment.text}}{{/if~}}
+  {{#if (eq segment.kind 'api-link')}}<a href="#{{segment.target.exportName}}"><Summary @text={{segment.elements}} /></a>{{/if~}}
+  {{#if (eq segment.kind 'web-link')}}<a href="{{segment.targetUrl}}"><Summary @text={{segment.elements}} /></a>{{/if~}}
+  {{#if (eq segment.kind 'paragraph')}}<div class="break"></div>{{/if~}}
+{{~/each~}}

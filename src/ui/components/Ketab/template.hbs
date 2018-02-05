@@ -1,1 +1,13 @@
-<div><h1>Welcome to Glimmer!</h1></div>
+<Sidebar
+  @packages={{packages}}
+  @selectedItem={{selectedItem}}
+  @onSelectItem={{action selectItem}}
+  />
+
+<main>
+  {{#if (eq selectedItem.kind "package")}}
+    <Package @package={{selectedItem}} />
+  {{else if (eq selectedItem.kind "class")}}
+    <Class @class={{selectedItem}} />
+  {{/if}}
+</main>

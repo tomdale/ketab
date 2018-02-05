@@ -1,3 +1,199 @@
+* {
+  box-sizing: content-box;
+}
+
 h1 {
   color: #444;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+  margin-left: 20vw;
+}
+
+a {
+  text-decoration: none;
+  color: #004aff;
+}
+
+a:hover {
+  color: #0e5caa;
+  text-decoration: underline;
+}
+
+.code {
+  font-family: "Menlo";
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 20vw;
+  overflow-y: scroll;
+  border-right: 1px solid #aaa;
+  background-color: #eee;
+  font-size: 0.8rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 3px 0 5px 7px;
+}
+
+.sidebar .sidebar-packages {
+  margin-top: 7px;
+}
+
+.sidebar .selected {
+  color: white;
+  background: #4780d4;
+}
+
+.sidebar-package-exports .sidebar-package-export {
+  padding-left: 27px;
+}
+
+.sidebar .badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+
+  font-family: Menlo;
+  font-weight: bold;
+}
+
+.sidebar .badge-class {
+  color: rgb(211, 26, 211);
+}
+
+.sidebar .badge-package {
+  color: #2c80d4;
+}
+
+.sidebar .badge-interface {
+  color: #673ab7;
+}
+
+.sidebar .badge-function {
+  color: #03a9f4;
+}
+
+.on-this-page {
+  position: absolute;
+  top: 0;
+  left: 50rem;
+}
+
+.on-this-page h4 {
+  margin: 0.25rem 0;
+  color: #999;
+}
+
+.on-this-page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.on-this-page li {
+  margin: 0.5rem 0;
+}
+
+main {
+  margin-top: 2rem;
+  padding-left: 3rem;
+}
+
+.package h1 {
+  font-size: 3.7rem;
+  font-weight: 100;
+}
+
+.package hr {
+  border: none;
+  background-color: #e0e0e0;
+  width: 35vw;
+  height: 1px;
+}
+
+.class {
+  position: relative;
+  margin: 6rem 0;
+}
+
+.class:first-of-type {
+  margin-top: 0;
+}
+
+.implements, .extends {
+  color: #666;
+}
+
+.summary {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #555;
+  max-width: 35rem;
+}
+
+.remarks {
+  margin: 2rem 0;
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.5rem;
+  max-width: 35rem;
+  color: #333;
+}
+
+.break {
+  margin: 1rem 0;
+}
+
+.kind {
+  color: #666;
+}
+
+.class-name {
+  font-size: 3rem;
+  color: #333;
+  margin: 0.2rem 0 0.4rem 0;
+  font-weight: 400;
+}
+
+.member-section h4 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.member-summary {
+  margin: 1rem 0 2rem 2rem;
+  font-size: 1.0rem;
+  color: #333;
+  max-width: 45rem;
+  font-weight: 100;
+  line-height: 1.5rem;
+}
+
+.constructor, .property, .method {
+  margin: 1rem 0;
+  color: #8a36c5;
 }

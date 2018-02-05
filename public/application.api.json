@@ -1,0 +1,2048 @@
+{
+  "kind": "package",
+  "name": "@glimmer/application",
+  "summary": [],
+  "remarks": [],
+  "exports": {
+    "ApplicationOptions": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Options for configuring an instance of [Application]."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "builder": {
+          "kind": "property",
+          "signature": "builder: Builder;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Builder",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "document": {
+          "kind": "property",
+          "signature": "document?: Simple.Document;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Simple.Document",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "loader": {
+          "kind": "property",
+          "signature": "loader: Loader;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Loader",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderer": {
+          "kind": "property",
+          "signature": "renderer: Renderer;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Renderer",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "resolver": {
+          "kind": "property",
+          "signature": "resolver?: Resolver;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Resolver",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rootName": {
+          "kind": "property",
+          "signature": "rootName: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "AsyncRenderer": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Renderer",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Performs an asynchronous initial render of templates using requestIdleCallback."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The AsyncRenderer instructs Glimmer to perform the initial render asynchronously. That is, it will yield back control of the main thread to the browser every so often, so that the browser may respond to user events like taps or scrolls so a user's device remains responsive."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Rather than completing the initial render as fast as possible, by consuming all of the main thread's resources until the render is complete, the AsyncRenderer instructs the VM to execute operations for a few milliseconds at a time."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Afer a few milliseconds, the AsyncRenderer will pause rendering, schedule more rendering to happen in the future, then yield control back to the browser. This process continues until there are no more instructions for the VM to execute and the initial render is complete."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Under the hood, work is scheduled using "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "requestIdleCallback"
+            }
+          ],
+          "targetUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback"
+        },
+        {
+          "kind": "text",
+          "text": ", which allows JavaScript programs to queue work to happen during idle periods."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(options?: AsyncRendererOptions);",
+          "parameters": {
+            "options": {
+              "name": "options",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "AsyncRendererOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "AsyncRenderer"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "AsyncRenderer",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "render": {
+          "kind": "method",
+          "signature": "render(iterator: TemplateIterator): Promise<void>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<void>",
+            "description": []
+          },
+          "parameters": {
+            "iterator": {
+              "name": "iterator",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "TemplateIterator"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rerender": {
+          "kind": "method",
+          "signature": "rerender(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "result": {
+          "kind": "property",
+          "signature": "protected result: RenderResult;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "RenderResult",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "timeout": {
+          "kind": "property",
+          "signature": "timeout: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "Builder": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "A Builder encapsulates the building of template output. For example, in the browser a builder might construct DOM elements, while on the server it may instead construct HTML. An object implementing the Builder interface should return a concrete instance of an ElementBuilder from its getBuilder method."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "getBuilder": {
+          "kind": "method",
+          "signature": "getBuilder(env: AbstractEnvironment): ElementBuilder;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ElementBuilder",
+            "description": []
+          },
+          "parameters": {
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "AbstractEnvironment"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns a concrete instance of an ElementBuilder for the given Environment."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "BytecodeData": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Additional metadata that accompanies the binary bytecode data."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "heap": {
+          "kind": "property",
+          "signature": "heap: SerializedHeap;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "SerializedHeap",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "mainEntry": {
+          "kind": "property",
+          "signature": "mainEntry: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "meta": {
+          "kind": "property",
+          "signature": "meta: Dict<Metadata>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Dict<Metadata>",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "pool": {
+          "kind": "property",
+          "signature": "pool: ConstantPool;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ConstantPool",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "prefix": {
+          "kind": "property",
+          "signature": "prefix: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "table": {
+          "kind": "property",
+          "signature": "table: Opaque[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Opaque[]",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "BytecodeLoader": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Loader",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Initializes an Application with a binary bytecode (.gbx) file containing compiled templates."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "Once all of the templates have been parsed into IR, the compiler performs a final pass that resolves symbolic addresses and writes the final opcodes into a shared binary buffer. In native compiler terms, you can think of this as the \"linking\" step that produces the final executable. This binary executable is saved to disk as a .gbx file that can be served to a browser and evaluated with the runtime."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For details, see "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "Application"
+            }
+          ],
+          "target": {
+            "scopeName": "@glimmer",
+            "packageName": "application",
+            "exportName": "Application",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": "."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor({bytecode, data}: BytecodeLoaderOptions);",
+          "parameters": {
+            "__0": {
+              "name": "__0",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "BytecodeLoaderOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "BytecodeLoader"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "BytecodeLoader",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "bytecode": {
+          "kind": "property",
+          "signature": "protected bytecode: Promise<ArrayBuffer>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Promise<ArrayBuffer>",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "data": {
+          "kind": "property",
+          "signature": "protected data: BytecodeData;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "BytecodeData",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getTemplateIterator": {
+          "kind": "method",
+          "signature": "getTemplateIterator(app: Application, env: Environment, builder: ElementBuilder, scope: DynamicScope, self: PathReference<Opaque>): Promise<TemplateIterator>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<TemplateIterator>",
+            "description": []
+          },
+          "parameters": {
+            "app": {
+              "name": "app",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Application"
+            },
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Environment"
+            },
+            "builder": {
+              "name": "builder",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ElementBuilder"
+            },
+            "scope": {
+              "name": "scope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DynamicScope"
+            },
+            "self": {
+              "name": "self",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PathReference<Opaque>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "default": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Owner",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The central control point for starting and running Glimmer components."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(options: ApplicationOptions);",
+          "parameters": {
+            "options": {
+              "name": "options",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ApplicationOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "default"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "default",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "_didError": {
+          "kind": "method",
+          "signature": "protected _didError(err: Error): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "err": {
+              "name": "err",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Error"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "_didRender": {
+          "kind": "method",
+          "signature": "protected _didRender(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "_notifiers": {
+          "kind": "property",
+          "signature": "protected _notifiers: Notifier[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Notifier[]",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "_rendered": {
+          "kind": "property",
+          "signature": "protected _rendered: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "_rendering": {
+          "kind": "property",
+          "signature": "protected _rendering: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "_scheduled": {
+          "kind": "property",
+          "signature": "protected _scheduled: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "boot": {
+          "kind": "method",
+          "signature": "boot(): Promise<void>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<void>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Initializes the application and renders any components that have been registered via [renderComponent]."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "builder": {
+          "kind": "property",
+          "signature": "protected builder: Builder;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Builder",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "document": {
+          "kind": "property",
+          "signature": "document: Simple.Document;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Simple.Document",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "env": {
+          "kind": "property",
+          "signature": "env: Environment;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Environment",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "loader": {
+          "kind": "property",
+          "signature": "protected loader: Loader;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Loader",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderComponent": {
+          "kind": "method",
+          "signature": "renderComponent(component: string, parent: Simple.Node, nextSibling?: Option<Simple.Node>): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "component": {
+              "name": "component",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "parent": {
+              "name": "parent",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Simple.Node"
+            },
+            "nextSibling": {
+              "name": "nextSibling",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Option<Simple.Node>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Renders a component by name into the provided element, and optionally adjacent to the provided nextSibling element."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "## Examples"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```js app.renderComponent('MyComponent', document.body, document.getElementById('my-footer')); ```"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderer": {
+          "kind": "property",
+          "signature": "protected renderer: Renderer;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Renderer",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "resolver": {
+          "kind": "property",
+          "signature": "resolver: Resolver;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Resolver",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rootName": {
+          "kind": "property",
+          "signature": "rootName: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "scheduleRerender": {
+          "kind": "method",
+          "signature": "scheduleRerender(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Schedules all components to revalidate and potentially update the DOM to reflect any changes to underlying component state."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Generally speaking, you should avoid calling `scheduleRerender()` manually. Instead, use tracked properties on components and models, which invoke this method for you automatically when appropriate."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "DOMBuilder": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Builder",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "A "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "Builder"
+            }
+          ],
+          "target": {
+            "scopeName": "@glimmer",
+            "packageName": "application",
+            "exportName": "Builder",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " that creates DOM elements when templates render."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Use a DOMBuilder for Glimmer.js applications that do not use server-side rendering. If you are using server-side rendering, the [RehydratingBuilder] can be used to rehydrate existing DOM instead of replacing it."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor({element, nextSibling}: Cursor);",
+          "parameters": {
+            "__0": {
+              "name": "__0",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Cursor"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "DOMBuilder"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "DOMBuilder",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "cursor": {
+          "kind": "property",
+          "signature": "protected cursor: Cursor;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Cursor",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getBuilder": {
+          "kind": "method",
+          "signature": "getBuilder(env: Environment): ElementBuilder;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ElementBuilder",
+            "description": []
+          },
+          "parameters": {
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Environment"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "Initializer": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Initializers run when an [Application] boots and allow extending the application with additional functionality. See [Application#registerInitializer]."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "initialize": {
+          "kind": "method",
+          "signature": "initialize(registry: RegistryWriter): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "registry": {
+              "name": "registry",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "RegistryWriter"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "name": {
+          "kind": "property",
+          "signature": "name?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "Loader": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Loaders are responsible for loading and preparing all of the templates and other metadata required to get a Glimmer.js application into a functioning state."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "getTemplateIterator": {
+          "kind": "method",
+          "signature": "getTemplateIterator(app: Application, env: Environment, builder: ElementBuilder, dynamicScope: DynamicScope, self: PathReference<Opaque>): TemplateIterator | Promise<TemplateIterator>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "TemplateIterator | Promise<TemplateIterator>",
+            "description": []
+          },
+          "parameters": {
+            "app": {
+              "name": "app",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Application"
+            },
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Environment"
+            },
+            "builder": {
+              "name": "builder",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ElementBuilder"
+            },
+            "dynamicScope": {
+              "name": "dynamicScope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DynamicScope"
+            },
+            "self": {
+              "name": "self",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PathReference<Opaque>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns a template iterator for on the provided application state."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "RehydratingBuilder": {
+      "kind": "class",
+      "extends": "DOMBuilder",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "A "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "Builder"
+            }
+          ],
+          "target": {
+            "scopeName": "@glimmer",
+            "packageName": "application",
+            "exportName": "Builder",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " that re-uses existing DOM provided via server-side rendering."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "The RehydratingBuilder attempts to use the DOM produced by SSR-generated HTML during template rendering. This allows components to \"rehydrate\" existing DOM elements, making initial render faster and preventing the browser from having to perform additional layout and paint operations."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "getBuilder": {
+          "kind": "method",
+          "signature": "getBuilder(env: Environment): ElementBuilder;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ElementBuilder",
+            "description": []
+          },
+          "parameters": {
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Environment"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "Renderer": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Renderers are responsible for iterating over the template iterator returned from a Loader, and re-rendering when component state has been invalidated. The Renderer may be either synchronous or asynchronous, and controls its own scheduling."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "render": {
+          "kind": "method",
+          "signature": "render(iterator: TemplateIterator): void | Promise<void>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void | Promise<void>",
+            "description": []
+          },
+          "parameters": {
+            "iterator": {
+              "name": "iterator",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "TemplateIterator"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Responsible for iterating over the passed template iterator until no more values remain. If this process is asynchronous, should return a promise that resolves once the iterator is exhausted."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rerender": {
+          "kind": "method",
+          "signature": "rerender(): void | Promise<void>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void | Promise<void>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Revalidates the initial render result. Called any time any component state may have changed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "RuntimeCompilerLoader": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Loader",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The RuntimeCompilerLoader is used by Glimmer.js applications that perform the final template compilation step client-side. It configures the compiler to resolve templates, helpers and other objects from the runtime registry, and enables just-in-time compilation of templates as they are encountered."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(resolver: Resolver);",
+          "parameters": {
+            "resolver": {
+              "name": "resolver",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Resolver"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "RuntimeCompilerLoader"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "RuntimeCompilerLoader",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "getTemplateIterator": {
+          "kind": "method",
+          "signature": "getTemplateIterator(app: Application, env: Environment, builder: ElementBuilder, dynamicScope: DynamicScope, self: PathReference<Opaque>): TemplateIterator;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "TemplateIterator",
+            "description": []
+          },
+          "parameters": {
+            "app": {
+              "name": "app",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Application"
+            },
+            "env": {
+              "name": "env",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Environment"
+            },
+            "builder": {
+              "name": "builder",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ElementBuilder"
+            },
+            "dynamicScope": {
+              "name": "dynamicScope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DynamicScope"
+            },
+            "self": {
+              "name": "self",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PathReference<Opaque>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "resolver": {
+          "kind": "property",
+          "signature": "resolver: Resolver;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Resolver",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "RuntimeCompilerResolver": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IRuntimeResolver",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(owner: Owner);",
+          "parameters": {
+            "owner": {
+              "name": "owner",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Owner"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "RuntimeCompilerResolver"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "application",
+                "exportName": "RuntimeCompilerResolver",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "compileTemplate": {
+          "kind": "method",
+          "signature": "compileTemplate(name: string, layout: Option<number>): Invocation;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Invocation",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "layout": {
+              "name": "layout",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Option<number>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "handleLookup": {
+          "kind": "property",
+          "signature": "handleLookup: TypedRegistry<Opaque>[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "TypedRegistry<Opaque>[]",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookup": {
+          "kind": "method",
+          "signature": "lookup(type: LookupType, name: string, referrer?: Specifier): Option<number>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Option<number>",
+            "description": []
+          },
+          "parameters": {
+            "type": {
+              "name": "type",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "LookupType"
+            },
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "referrer": {
+              "name": "referrer",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookupComponent": {
+          "kind": "method",
+          "signature": "lookupComponent(name: string, meta: Specifier): ComponentDefinition;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ComponentDefinition",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "meta": {
+              "name": "meta",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookupComponentHandle": {
+          "kind": "method",
+          "signature": "lookupComponentHandle(name: string, referrer?: Specifier): number;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "number",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "referrer": {
+              "name": "referrer",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookupHelper": {
+          "kind": "method",
+          "signature": "lookupHelper(name: string, meta?: Specifier): Option<number>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Option<number>",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "meta": {
+              "name": "meta",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookupModifier": {
+          "kind": "method",
+          "signature": "lookupModifier(name: string, meta?: Specifier): Option<number>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Option<number>",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "meta": {
+              "name": "meta",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lookupPartial": {
+          "kind": "method",
+          "signature": "lookupPartial(name: string, meta?: Specifier): never;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "never",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "meta": {
+              "name": "meta",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Specifier"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "managerFor": {
+          "kind": "method",
+          "signature": "managerFor(managerId?: string): ComponentManager;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ComponentManager",
+            "description": []
+          },
+          "parameters": {
+            "managerId": {
+              "name": "managerId",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "register": {
+          "kind": "method",
+          "signature": "register<K extends LookupType>(type: K, name: string, value: Lookup[K]): number;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "number",
+            "description": []
+          },
+          "parameters": {
+            "type": {
+              "name": "type",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "K"
+            },
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "value": {
+              "name": "value",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Lookup[K]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "registerComponent": {
+          "kind": "method",
+          "signature": "registerComponent(name: string, resolvedSpecifier: string, Component: ComponentFactory, template: SerializedTemplateWithLazyBlock<Specifier>): number;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "number",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "resolvedSpecifier": {
+              "name": "resolvedSpecifier",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "Component": {
+              "name": "Component",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentFactory"
+            },
+            "template": {
+              "name": "template",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SerializedTemplateWithLazyBlock<Specifier>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "registerHelper": {
+          "kind": "method",
+          "signature": "registerHelper(name: string, helper: UserHelper): number;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "number",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "helper": {
+              "name": "helper",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "UserHelper"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "registerInternalHelper": {
+          "kind": "method",
+          "signature": "registerInternalHelper(name: string, helper: GlimmerHelper): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "helper": {
+              "name": "helper",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "GlimmerHelper"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "registerTemplate": {
+          "kind": "method",
+          "signature": "registerTemplate(resolvedSpecifier: string, template: SerializedTemplateWithLazyBlock<Specifier>): TemplateEntry;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "TemplateEntry",
+            "description": []
+          },
+          "parameters": {
+            "resolvedSpecifier": {
+              "name": "resolvedSpecifier",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "template": {
+              "name": "template",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SerializedTemplateWithLazyBlock<Specifier>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "resolve": {
+          "kind": "method",
+          "signature": "resolve<T>(handle: number): T;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "T",
+            "description": []
+          },
+          "parameters": {
+            "handle": {
+              "name": "handle",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "setCompileOptions": {
+          "kind": "method",
+          "signature": "setCompileOptions(compileOptions: TemplateOptions<Specifier>): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "compileOptions": {
+              "name": "compileOptions",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "TemplateOptions<Specifier>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "templateOptions": {
+          "kind": "property",
+          "signature": "templateOptions: TemplateOptions<Specifier>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "TemplateOptions<Specifier>",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SyncRenderer": {
+      "kind": "class",
+      "extends": "",
+      "implements": "Renderer",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Performs a synchronous initial render of templates."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The SyncRenderer will render a template as fast as possible, continuing to work until the template has been completely rendered."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "While this delivers the fastest absolute rendering performance, large templates may cause the main thread to be consumed for long periods of time, leading to user-noticeable performance degradation, or jank."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "See also: "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "AsyncRenderer"
+            }
+          ],
+          "target": {
+            "scopeName": "@glimmer",
+            "packageName": "application",
+            "exportName": "AsyncRenderer",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "render": {
+          "kind": "method",
+          "signature": "render(iterator: TemplateIterator): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "iterator": {
+              "name": "iterator",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "TemplateIterator"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rerender": {
+          "kind": "method",
+          "signature": "rerender(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "result": {
+          "kind": "property",
+          "signature": "result: RenderResult;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "RenderResult",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

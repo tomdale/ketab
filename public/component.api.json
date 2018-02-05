@@ -1,0 +1,1792 @@
+{
+  "kind": "package",
+  "name": "@glimmer/component",
+  "summary": [],
+  "remarks": [],
+  "exports": {
+    "Bounds": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Contains the first and last DOM nodes in a component's rendered template. These nodes can be used to traverse the section of DOM that belongs to a particular component."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Note that these nodes *can* change over the lifetime of a component if the beginning or ending of the template is dynamic."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(_bounds: VMBounds);",
+          "parameters": {
+            "_bounds": {
+              "name": "_bounds",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "VMBounds"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "Bounds"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "component",
+                "exportName": "Bounds",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "firstNode": {
+          "kind": "property",
+          "signature": "readonly firstNode: Node;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Node",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "lastNode": {
+          "kind": "property",
+          "signature": "readonly lastNode: Node;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Node",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "CachedReference": {
+      "kind": "class",
+      "extends": "ComponentPathReference",
+      "implements": "",
+      "typeParameters": [
+        "T"
+      ],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "compute": {
+          "kind": "method",
+          "signature": "abstract compute(): T;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "T",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "value": {
+          "kind": "method",
+          "signature": "value(): any;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ComponentDefinition": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IComponentDefinition",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(name: string, manager: ComponentManager, ComponentClass: ComponentFactory, handle: Option<VMHandle>);",
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "manager": {
+              "name": "manager",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentManager"
+            },
+            "ComponentClass": {
+              "name": "ComponentClass",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentFactory"
+            },
+            "handle": {
+              "name": "handle",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Option<VMHandle>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "ComponentDefinition"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "component",
+                "exportName": "ComponentDefinition",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "ComponentClass": {
+          "kind": "property",
+          "signature": "ComponentClass: ComponentFactory;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ComponentFactory",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "handle": {
+          "kind": "property",
+          "signature": "handle: Option<VMHandle>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Option<VMHandle>",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manager": {
+          "kind": "property",
+          "signature": "manager: ComponentManager;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ComponentManager",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "name": {
+          "kind": "property",
+          "signature": "name: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "state": {
+          "kind": "property",
+          "signature": "state: DefinitionState;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "DefinitionState",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "toJSON": {
+          "kind": "method",
+          "signature": "toJSON:",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "{\n        GlimmerDebug: string;\n    }",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ComponentFactory": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "create": {
+          "kind": "method",
+          "signature": "create(injections: object): Component;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Component",
+            "description": []
+          },
+          "parameters": {
+            "injections": {
+              "name": "injections",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "object"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ComponentManager": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IComponentManager",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(options: ConstructorOptions);",
+          "parameters": {
+            "options": {
+              "name": "options",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ConstructorOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "ComponentManager"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "component",
+                "exportName": "ComponentManager",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "create": {
+          "kind": "method",
+          "signature": "static create(options: ConstructorOptions): ComponentManager;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": true,
+          "returnValue": {
+            "type": "ComponentManager",
+            "description": []
+          },
+          "parameters": {
+            "options": {
+              "name": "options",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ConstructorOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didCreate": {
+          "kind": "method",
+          "signature": "didCreate(bucket: ComponentStateBucket): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didCreateElement": {
+          "kind": "method",
+          "signature": "didCreateElement(bucket: ComponentStateBucket, element: HTMLElement): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            },
+            "element": {
+              "name": "element",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "HTMLElement"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didRenderLayout": {
+          "kind": "method",
+          "signature": "didRenderLayout(bucket: ComponentStateBucket, bounds: VMBounds): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            },
+            "bounds": {
+              "name": "bounds",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "VMBounds"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didUpdate": {
+          "kind": "method",
+          "signature": "didUpdate(bucket: ComponentStateBucket): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didUpdateLayout": {
+          "kind": "method",
+          "signature": "didUpdateLayout(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getCapabilities": {
+          "kind": "method",
+          "signature": "getCapabilities(state: DefinitionState): ComponentCapabilities;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ComponentCapabilities",
+            "description": []
+          },
+          "parameters": {
+            "state": {
+              "name": "state",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DefinitionState"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getDestructor": {
+          "kind": "method",
+          "signature": "getDestructor(bucket: ComponentStateBucket): Destroyable;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Destroyable",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getLayout": {
+          "kind": "method",
+          "signature": "getLayout({name, handle, symbolTable}: DefinitionState, resolver: CompilableRuntimeResolver): Invocation;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Invocation",
+            "description": []
+          },
+          "parameters": {
+            "__0": {
+              "name": "__0",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DefinitionState"
+            },
+            "resolver": {
+              "name": "resolver",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "CompilableRuntimeResolver"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getSelf": {
+          "kind": "method",
+          "signature": "getSelf(bucket: ComponentStateBucket): PathReference;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "PathReference",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getTag": {
+          "kind": "method",
+          "signature": "getTag(bucket: ComponentStateBucket): Tag;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Tag",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "prepareArgs": {
+          "kind": "method",
+          "signature": "prepareArgs(state: DefinitionState, args: Arguments): null;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "null",
+            "description": []
+          },
+          "parameters": {
+            "state": {
+              "name": "state",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DefinitionState"
+            },
+            "args": {
+              "name": "args",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Arguments"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "update": {
+          "kind": "method",
+          "signature": "update(bucket: ComponentStateBucket, scope: DynamicScope): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "bucket": {
+              "name": "bucket",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ComponentStateBucket"
+            },
+            "scope": {
+              "name": "scope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DynamicScope"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ConditionalReference": {
+      "kind": "class",
+      "extends": "GlimmerConditionalReference",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "create": {
+          "kind": "method",
+          "signature": "static create(reference: PathReference<any>): PrimitiveReference<any> | ConditionalReference;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": true,
+          "returnValue": {
+            "type": "PrimitiveReference<any> | ConditionalReference",
+            "description": []
+          },
+          "parameters": {
+            "reference": {
+              "name": "reference",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PathReference<any>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "default": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The `Component` class defines an encapsulated UI element that is rendered to the DOM. A component is made up of a template and, optionally, this component object."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "## Defining a Component"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "To define a component, subclass `Component` and add your own properties, methods and lifecycle hooks:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```ts import Component from '@glimmer/component';"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "export default class extends Component { } ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "## Lifecycle Hooks"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Lifecycle hooks allow you to respond to changes to a component, such as when it gets created, rendered, updated or destroyed. To add a lifecycle hook to a component, implement the hook as a method on your component subclass."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For example, to be notified when Glimmer has rendered your component so you can attach a legacy jQuery plugin, implement the `didInsertElement()` method:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```ts import Component from '@glimmer/component';"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "export default class extends Component { didInsertElement() { $(this.element).pickadate(); } } ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "## Data for Templates"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "`Component`s have two different kinds of data, or state, that can be displayed in templates:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "1. Arguments 2. Properties"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Arguments are data that is passed in to a component from its parent component. For example, if I have a `UserGreeting` component, I can pass it a name and greeting to use:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs <UserGreeting @name=\"Ricardo\" @greeting=\"Olá\" /> ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Inside my `UserGreeting` template, I can access the `@name` and `@greeting` arguments that I've been given:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs {"
+        },
+        {
+          "kind": "text",
+          "text": "}, {"
+        },
+        {
+          "kind": "text",
+          "text": "}! ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Arguments are also available inside my component:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```ts console.log(this.args.greeting); // prints \"Olá\" ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Properties, on the other hand, are internal to the component and declared in the class. You can use properties to store data that you want to show in the template, or pass to another component as an argument."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```ts import Component from '@glimmer/component';"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "export default class extends Component { user = { name: 'Robbie' } } ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "In the above example, we've defined a component with a `user` property that contains an object with its own `name` property."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "We can render that property in our template:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs Hello, {{user.name}}! ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "We can also take that property and pass it as an argument to the `UserGreeting` component we defined above:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs <UserGreeting @greeting=\"Hello\" @name={{user.name}} /> ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "## Arguments vs. Properties"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Remember, arguments are data that was given to your component by its parent component, and properties are data your component has defined for itself."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "You can tell the difference between arguments and properties in templates because arguments always start with an `@` sign (think \"A is for arguments\"):"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs {"
+        },
+        {
+          "kind": "text",
+          "text": "} ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "We know that `@firstName` came from the parent component, not the current component, because it starts with `@` and is therefore an argument."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "On the other hand, if we see:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "```hbs {{name}} ```"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "We know that `name` is a property on the component. If we want to know where the data is coming from, we can go look at our component class to find out."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Inside the component itself, arguments always show up inside the component's `args` property. For example, if `{"
+        },
+        {
+          "kind": "text",
+          "text": "}` is `Tom` in the template, inside the component `this.args.firstName` would also be `Tom`."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(options: object);",
+          "parameters": {
+            "options": {
+              "name": "options",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "object"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new component and assigns itself the passed properties. You should not construct new components yourself. Instead, Glimmer will instantiate new components automatically as it renders."
+            }
+          ],
+          "remarks": []
+        },
+        "args": {
+          "kind": "property",
+          "signature": "args: any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Named arguments passed to the component from its parent component. They can be accessed in JavaScript via `this.args.argumentName` and in the template via `@argumentName`."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Say you have the following component, which will have two `args`, `firstName` and `lastName`:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs <my-component @firstName=\"Arthur\" @lastName=\"Dent\" /> ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If you needed to calculate `fullName` by combining both of them, you would do:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```ts didInsertElement() { console.log(`Hi, my full name is ${this.args.firstName} ${this.args.lastName}`); } ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "While in the template you could do:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs <p>Welcome, {"
+            },
+            {
+              "kind": "text",
+              "text": "} {"
+            },
+            {
+              "kind": "text",
+              "text": "}!</p> ```"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "bounds": {
+          "kind": "property",
+          "signature": "bounds: Bounds;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Bounds",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Contains the first and last DOM nodes of a component's rendered template. These nodes can be used to traverse all of the DOM nodes that belong to a particular component."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Note that a component's first and last nodes *can* change over time, if the beginning or ending of the template is dynamic. You should always access `bounds` directly at the time a node is needed to ensure you are acting on up-to-date nodes."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "### Examples"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "For components with a single root element, `this.bounds.firstNode` and `this.bounds.lastNode` are the same."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs <div class=\"user-profile\"> <Avatar @user={{user}} /> </div> ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```ts export default class extends Component { didInsertElement() { let { firstNode, lastNode } = this.bounds; console.log(firstNode === lastNode); // true console.log(firstNode.className); // \"user-profile\" } } ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "For components with multiple root nodes, `this.bounds.firstNode` refers to the first node in the template and `this.bounds.lastNode` refers to the last:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs Welcome to Glimmer.js! <span>Let's build some components!</span> <img src=\"logo.png\"> ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```ts export default class extends Component { didInsertElement() { let { firstNode, lastNode } = this.bounds;"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "// Walk all of the DOM siblings from the // firstNode to the lastNode and push their // nodeName into an array. let node = firstNode; let names = [firstNode.nodeName]; do { node = node.nextSibling; names.push(node.nodeName); } while (node !== lastNode);"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "console.log(names); // [\"#text\", \"SPAN\", \"IMG\"] } } ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The bounds can change if the template has dynamic content at the beginning or the end:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs {{#if user.isAdmin}} <span class=\"warning\">Admin</span> {{else}} Normal User {{/if}} ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "In this example, the `firstNode` will change between a `span` element and a `TextNode` as the `user.isAdmin` property changes."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "create": {
+          "kind": "method",
+          "signature": "static create(injections: any): Component;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": true,
+          "returnValue": {
+            "type": "Component",
+            "description": []
+          },
+          "parameters": {
+            "injections": {
+              "name": "injections",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "debugName": {
+          "kind": "property",
+          "signature": "debugName: string | null;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | null",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Development-mode only name of the component, useful for debugging."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "destroy": {
+          "kind": "method",
+          "signature": "destroy(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didInsertElement": {
+          "kind": "method",
+          "signature": "didInsertElement(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Called when the component has been inserted into the DOM. Override this function to do any set up that requires an element in the document body."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "didUpdate": {
+          "kind": "method",
+          "signature": "didUpdate(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Called when the component has updated and rerendered itself. Called only during a rerender, not during an initial render."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "element": {
+          "kind": "property",
+          "signature": "readonly element: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The element corresponding to the main element of the component's template. The main element is the element in the template that has `...attributes` set on it:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "```hbs <h1>Modal</h1> <div class=\"contents\" ...attributes> {{yield}} </div> ```"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "In this example, `this.element` would be the `div` with the class `contents`."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "You should not try to access this property until after the component's `didInsertElement()` lifecycle hook is called."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "toString": {
+          "kind": "method",
+          "signature": "toString(): string;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "string",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "willDestroy": {
+          "kind": "method",
+          "signature": "willDestroy(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Called before the component has been removed from the DOM."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "RootReference": {
+      "kind": "class",
+      "extends": "ConstReference",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "get": {
+          "kind": "method",
+          "signature": "get(propertyKey: string): RootPropertyReference;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "RootPropertyReference",
+            "description": []
+          },
+          "parameters": {
+            "propertyKey": {
+              "name": "propertyKey",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "setPropertyDidChange": {
+      "kind": "function",
+      "signature": "export function setPropertyDidChange(cb: () => void): void;",
+      "returnValue": {
+        "type": "void",
+        "description": []
+      },
+      "parameters": {
+        "cb": {
+          "name": "cb",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "() => void"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false
+    },
+    "tagForProperty": {
+      "kind": "function",
+      "signature": "export function tagForProperty(obj: any, key: string, throwError?: UntrackedPropertyErrorThrower): Tag;",
+      "returnValue": {
+        "type": "Tag",
+        "description": []
+      },
+      "parameters": {
+        "obj": {
+          "name": "obj",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "any"
+        },
+        "key": {
+          "name": "key",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "throwError": {
+          "name": "throwError",
+          "description": [],
+          "isOptional": true,
+          "isSpread": false,
+          "type": "UntrackedPropertyErrorThrower"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false
+    },
+    "TemplateMeta": {
+      "kind": "interface",
+      "extends": "TemplateMeta",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "managerId": {
+          "kind": "property",
+          "signature": "managerId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "specifier": {
+          "kind": "property",
+          "signature": "specifier: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "tracked": {
+      "kind": "function",
+      "signature": "export function tracked(target: any, key: any, descriptor: PropertyDescriptor): PropertyDescriptor;",
+      "returnValue": {
+        "type": "PropertyDescriptor",
+        "description": []
+      },
+      "parameters": {
+        "target": {
+          "name": "target",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "any"
+        },
+        "key": {
+          "name": "key",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "any"
+        },
+        "descriptor": {
+          "name": "descriptor",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "PropertyDescriptor"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false
+    },
+    "UntrackedPropertyError": {
+      "kind": "class",
+      "extends": "Error",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(target: any, key: string, message: string);",
+          "parameters": {
+            "target": {
+              "name": "target",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "key": {
+              "name": "key",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "message": {
+              "name": "message",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "UntrackedPropertyError"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "component",
+                "exportName": "UntrackedPropertyError",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "for": {
+          "kind": "method",
+          "signature": "static for(obj: any, key: string): UntrackedPropertyError;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": true,
+          "returnValue": {
+            "type": "UntrackedPropertyError",
+            "description": []
+          },
+          "parameters": {
+            "obj": {
+              "name": "obj",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "key": {
+              "name": "key",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "key": {
+          "kind": "property",
+          "signature": "key: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "target": {
+          "kind": "property",
+          "signature": "target: any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "UpdatableReference": {
+      "kind": "class",
+      "extends": "ComponentPathReference",
+      "implements": "",
+      "typeParameters": [
+        "T"
+      ],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(value: T);",
+          "parameters": {
+            "value": {
+              "name": "value",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "T"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "UpdatableReference"
+                }
+              ],
+              "target": {
+                "scopeName": "@glimmer",
+                "packageName": "component",
+                "exportName": "UpdatableReference",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "tag": {
+          "kind": "property",
+          "signature": "tag: TagWrapper<DirtyableTag>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "TagWrapper<DirtyableTag>",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "update": {
+          "kind": "method",
+          "signature": "update(value: T): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "value": {
+              "name": "value",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "T"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "value": {
+          "kind": "method",
+          "signature": "value(): T;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "T",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

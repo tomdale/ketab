@@ -1,7 +1,10 @@
 # ketab
 
-This README outlines the details of collaborating on this Glimmer application.
-A short introduction of this app could easily go here.
+Glimmer.js app for rendering API documentation produced by [API
+Extractor](https://github.com/Microsoft/web-build-tools/wiki/API-Extractor).
+
+**Currently very rough/WIP.** The JSON files containing the API information are
+in `public/` and hardcoded. 
 
 ## Prerequisites
 
